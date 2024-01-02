@@ -3,8 +3,6 @@ import { getCurrentChatId } from "../../../../script.js"; // Ensure correct path
 import { addMessages, onPurgeClick } from '../Extension-ChromaDB/index.js';
 import { registerSlashCommand } from "../../../slash-commands.js";
 
-registerSlashCommand("forceRefreshChatInDB", forceRefreshChatInDB, [], "Forces refresh of ChromaDB", true, true);
-
 async function forceRefreshChatInDB() {
     const context = getContext();
     const chat = context.chat;
@@ -26,3 +24,5 @@ async function forceRefreshChatInDB() {
         console.log("No messages to add.");
     }
 }
+
+registerSlashCommand("forcerefreshchatindb", forceRefreshChatInDB, [], "Forces refresh of ChromaDB", true, true);
