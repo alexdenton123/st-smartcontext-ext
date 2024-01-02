@@ -1,7 +1,7 @@
-import { getContext, getApiUrl, doExtrasFetch } from "../../extensions.js";
-import { getCurrentChatId } from "../../../script.js"; // Ensure correct path
-import { addMessages, onPurgeClick } from '../third-party/Extension-ChromaDB/index.js';
-import { registerSlashCommand } from "../../slash-commands.js";
+import { getContext, getApiUrl, doExtrasFetch } from "../../../extensions.js";
+import { getCurrentChatId } from "../../../../script.js"; // Ensure correct path
+import { addMessages, onPurgeClick } from '../../third-party/Extension-ChromaDB/index.js';
+import { registerSlashCommand } from "../../../slash-commands.js";
 
 registerSlashCommand("forceRefreshChatInDB", forceRefreshChatInDB, [], "Forces refresh of ChromaDB", true, true);
 
