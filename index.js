@@ -40,6 +40,12 @@ function forceRefreshChatInDBUi() {
             Force ChromaDB Refresh
         </div>`);
     $('#chromadb-force-reload-menu-item').attr('title', 'Trigger ChromaDB Refresh').on('click', forceRefreshChatInDB);
+    $('#extensionsMenu').prepend(`
+        <div id="chromadb-force-purge-menu-item" class="list-group-item flex-container flexGap5">
+            <div id="chromadb-force-purge-menu-item" class="extensionsMenuExtensionButton fa-regular fa-square-check"/></div>
+            Force ChromaDB Purge
+        </div>`);
+    $('#chromadb-force-purge-menu-item').attr('title', 'Trigger ChromaDB Purge').on('click', onPurgeClick);
 }
 
 
