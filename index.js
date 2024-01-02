@@ -24,5 +24,18 @@ async function forceRefreshChatInDB() {
         console.log("No messages to add.");
     }
 }
+function forceRefreshChatInDBUi() {
+    $('#extensionsMenu').prepend(`
+        <div id="chromadb-force-reload-menu-item" class="list-group-item flex-container flexGap5">
+            <div id="chromadb-force-reload-menu-item" class="extensionsMenuExtensionButton fa-regular fa-square-check"/></div>
+            Force ChromaDB Refresh
+        </div>`);
+    $('#chromadb-force-reload-menu-item').attr('title', 'Trigger ChromaDB Refresh').on('click', forceRefreshChatInDB);
+}
 
-registerSlashCommand("forcerefreshchatindb", forceRefreshChatInDB, [], "Forces refresh of ChromaDB", true, true);
+
+jQuery(async () => {
+        forceRefreshChatInDBUi();
+        registerSlashCommand("chromasave", forceRefreshChatInDB, [], "- Forces refresh of ChromaDB", true, true);
+        console.warn(`st-smartcontext-ext loaded`);
+}
