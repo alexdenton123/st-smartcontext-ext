@@ -1,7 +1,7 @@
 {
     "display_name": "Smart Context Toolbox Extension",
-    "loading_order": 9,
-    "requires": [],
+    "loading_order": 12,
+    "requires": ["chromadb"],
     "optional": [],
     "js": "index.js",
     "css": "style.css",
