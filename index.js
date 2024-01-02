@@ -3,6 +3,15 @@ import { getCurrentChatId } from "../../../../script.js"; // Ensure correct path
 import { addMessages, onPurgeClick } from '../Extension-ChromaDB/index.js';
 import { registerSlashCommand } from "../../../slash-commands.js";
 
+function checkChatId(chat_id) {
+    if (!chat_id || chat_id.trim() === '') {
+        toastr.error('Please select a character and try again.');
+        return false;
+    }
+    return true;
+}
+
+
 async function forceRefreshChatInDB() {
     const context = getContext();
     const chat = context.chat;
@@ -36,6 +45,6 @@ function forceRefreshChatInDBUi() {
 
 jQuery(async () => {
         forceRefreshChatInDBUi();
-        registerSlashCommand("chromasave", forceRefreshChatInDB, [], "- Forces refresh of ChromaDB", true, true);
+        registerSlashCommand("forceRefreshChatInDB", forceRefreshChatInDB, [], "- Forces refresh of ChromaDB", true, true);
         console.log(`st-smartcontext-ext loaded`);
 });
