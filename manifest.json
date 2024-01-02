@@ -7,5 +7,6 @@
     "css": "style.css",
     "author": "Alex Denton",
     "version": "1.0.0",
-    "homePage": "https://github.com/alexdenton123"
+    "homePage": "https://github.com/alexdenton123",
+    "auto_update": true
 }
