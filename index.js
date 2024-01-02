@@ -37,5 +37,5 @@ function forceRefreshChatInDBUi() {
 jQuery(async () => {
         forceRefreshChatInDBUi();
         registerSlashCommand("chromasave", forceRefreshChatInDB, [], "- Forces refresh of ChromaDB", true, true);
-        console.warn(`st-smartcontext-ext loaded`);
+        console.log(`st-smartcontext-ext loaded`);
 }
